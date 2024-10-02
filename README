@@ -1,0 +1,16 @@
+Name:		Azan Nazar
+B-Number:	B00882606
+Email:		anazar1@binghamton.edu
+
+Current errors outstanding
+- From question 9:
+    - 37 / 40 test cases are working
+    - Cases which dont work (give f instead of t):
+    -   ;; /(ab)*(ba)*/ matches "abab"
+        (check-equal? (re-match '((* (a b)) (* (b a))) '(a b a b)) #t)
+        
+    -   ;; /(ab)*(ba)*/ matches "ababbababa"
+        (check-equal? (re-match '((* (a b)) (* (b a))) '(a b a b b a b a b a)) #t)
+
+    -   ;; /(ab)*(ba)*/ matches "bababa"
+        (check-equal? (re-match '((* (a b)) (* (b a))) '(b a b a b a)) #t)
